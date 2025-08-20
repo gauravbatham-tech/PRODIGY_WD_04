@@ -1,88 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SkySense — Weather & Insights</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Chart.js for the hourly graph -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="shortcut icon" href="img/bg.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="bg"></div>
 
-  <header class="topbar">
-    <h1 class="brand">SkySense</h1>
-    <div class="controls">
-      <div class="search">
-        <input id="searchInput" type="text" placeholder="Search city (e.g., Mumbai)" />
-        <button id="searchBtn" aria-label="Search">Search</button>
-        <button id="locateBtn" aria-label="Use my location">Use My Location</button>
-      </div>
-      <div class="toggles">
-        <label class="switch">
-          <input id="unitToggle" type="checkbox" />
-          <span class="slider"></span>
-          <span class="labels"><span>°C</span><span>°F</span></span>
-        </label>
-      </div>
+
+    <div class="app-main" id="parent">
+        <div class="header">
+            <h4>Get Weather</h4>
+        </div>
+        <div class="searchInputBox">
+            <input type="text" name="" id="input-box" class="input-box" placeholder="enter city name">
+        </div>
+        <div class="weather-body" id="weather-body">
+            <!-- weather-body will be append through JavaScript -->
+        </div>
+            
     </div>
-  </header>
+   
 
-  <main class="container">
-    <section class="now card">
-      <div class="now-left">
-        <div id="place" class="place">—</div>
-        <div id="updated" class="updated">Updating…</div>
-        <div class="temp-row">
-          <div id="temp" class="temp">—</div>
-          <div id="condition" class="condition">—</div>
-        </div>
-        <div class="minmax">
-          <span id="tmin">Min —</span>
-          <span id="tmax">Max —</span>
-        </div>
-      </div>
-      <div class="now-right">
-        <div class="icon-wrap">
-          <span id="bigIcon" class="big-icon">☁️</span>
-        </div>
-        <ul class="meta">
-          <li><strong>Feels:</strong> <span id="feels">—</span></li>
-          <li><strong>Humidity:</strong> <span id="humidity">—</span></li>
-          <li><strong>Wind:</strong> <span id="wind">—</span></li>
-          <li><strong>Rain (1h):</strong> <span id="precip">—</span></li>
-          <li><strong>Clouds:</strong> <span id="cloud">—</span></li>
-          <li><strong>Sunrise:</strong> <span id="sunrise">—</span></li>
-          <li><strong>Sunset:</strong> <span id="sunset">—</span></li>
-        </ul>
-      </div>
-    </section>
+    <script src="script.js"></script>
+    <!-- font awesome icon cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- sweetalert cdn........ -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <section class="card">
-      <h2>Next 24 hours</h2>
-      <canvas id="hourlyChart" height="80"></canvas>
-      <div id="hourlyChips" class="chips"></div>
-    </section>
-
-    <section class="forecast card">
-      <h2>7-day forecast</h2>
-      <div id="days" class="days"></div>
-    </section>
-
-    <section class="insights card">
-      <h2>Smart suggestions</h2>
-      <ul id="advice" class="advice"></ul>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>Data: Open-Meteo · Geocoding: Open-Meteo</div>
-    <div id="clock"></div>
-  </footer>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <script src="app.js"></script>
 </body>
+
 </html>
