@@ -1,5 +1,6 @@
 # 🌤 Weather App
 
+# Task 04 - Prodigy Infotech Internship
 A simple and stylish weather app built using **HTML, CSS, and JavaScript**.  
 It fetches live weather data based on city name input and displays temperature, conditions, and icons in a modern glassy UI.
 
